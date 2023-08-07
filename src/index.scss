@@ -1,9 +1,205 @@
-* {
-	padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
+@mixin mobile {
+	@media screen and (max-width: 678px) {
+		@content;
+	}
 }
 
+@mixin tablet {
+	@media screen and (max-width: 1023px) {
+		@content;
+	}
+}
 
+@mixin laptop {
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
+}
+
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	font-family: "Roboto", sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+.active {
+	display: block;
+}
+
+.hide {
+	display: none;
+}
+
+// ==============================================
+// ============== Navbar Section ================
+// ==============================================
+.navbar {
+	position: fixed;
+	top: 50px;
+	left: 0px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	
+	@include tablet {
+		top: 0px;
+	}
+
+	@include mobile {
+		top: 50px;
+	}
+	
+	.logo-container {
+		padding: 0px 10%;
+		z-index: 1;
+	}
+
+	.menubar {
+		min-width: 730px;
+		width: 55%;
+		padding: 30px;
+		padding-left: 6%;
+		background: hsla(0, 0%, 100%, 0.01);
+		backdrop-filter: blur(25px);
+		-webkit-backdrop-filter: blur(25px);
+		display: flex;
+		align-items: center;
+		gap: 4%;
+		position: relative;
+		
+		@include tablet {
+			padding-left: 30px;
+			width: 500px;
+			min-width: 500px;
+		}
+
+		@include mobile {
+			display: none;
+		}
+
+
+		&::before {
+			position: absolute;
+			top: 50%;
+			right: 96%;
+			content: "";
+			width: 25vw;
+			height: 2px;
+			background: hsla(0, 0%, 52%, 0.349);
+			
+			@include laptop {
+				width: 25%;
+			}
+
+			@include tablet {
+				display: none;
+			}
+		}
+
+		li a {
+			color: hsl(36, 100%, 100%);
+			font-family: "Barlow", sans-serif;
+			font-weight: 400;
+			text-transform: uppercase;
+			padding: 30px 10px;
+			span {
+				font-weight: 600;
+				margin-right: 6px;
+
+				@include tablet {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.mobile-menubar-container {
+		position: relative;
+		display: none;
+
+		@include mobile {
+			display: block;
+		}
+
+		& > button {
+			background: transparent;
+			margin-right: 30px;
+		}
+
+		.mobile-menubar {
+			position: absolute;
+			top: -40px;
+			right: 10px;
+			background: hsla(0, 0%, 100%, 0.015);
+			backdrop-filter: blur(2px);
+			-webkit-backdrop-filter: blur(25px);
+			transition: all 0.3s ease-in-out;
+			transform: translateX(800px);
+			padding: 30px;
+			border-radius: 10px;
+
+			button {
+				float: right;
+				background: transparent;
+			}
+
+			.mobile-menu {
+				margin-top: 50px;
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				li a {
+					color: hsl(36, 100%, 100%);
+					font-family: "Barlow", sans-serif;
+					font-weight: 400;
+					text-transform: uppercase;
+					padding: 5px 10px;
+					display: block;
+
+					span {
+						font-weight: 600;
+						margin-right: 6px;
+					}
+				}
+			}
+		}
+		.active-mobile-menubar {
+			transform: translateX(0px);
+		}
+	}
+	.active-navlink {
+		color: hsl(36, 100%, 100%);
+		border-bottom: 2px solid hsl(36, 100%, 100%);
+
+		@include mobile {
+			background: hsl(36, 100%, 100%);
+			border-radius: 8px;
+			color: hsl(0, 0%, 0%) !important;
+		}
+	}
+}
+
+// ==============================================
+// ================ Home Section ================
+// ==============================================
+
+.home {
+	background: url(/public/assets/home/background-home-mobile.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+}
