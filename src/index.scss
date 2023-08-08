@@ -61,6 +61,27 @@ ul {
 	}
 }
 
+.subtitle {
+	font-family: "Oswald", sans-serif;
+	font-weight: 300;
+	font-size: 25px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
+.text {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 30px;
+	color: hsl(211, 19%, 68%);
+
+	@include mobile {
+		font-size: 15px;
+		text-align: center;
+	}
+}
+
 // ==============================================
 // ============== Navbar Section ================
 // ==============================================
@@ -221,13 +242,14 @@ ul {
 	padding-top: 150px;
 	height: 100vh;
 	width: 100%;
-	
+
 	@include tablet {
 		background: url(/public/assets/home/background-home-tablet.jpg);
 		background-repeat: no-repeat;
 		background-size: cover;
-		height: 100%;
 		padding-bottom: 100px;
+		height: 100%;
+		padding-top: 180px;
 	}
 
 	@include mobile {
@@ -252,11 +274,6 @@ ul {
 			max-width: 400px;
 
 			.home-banner-subtitle {
-				font-family: "Oswald", sans-serif;
-				font-weight: 300;
-				font-size: 25px;
-				letter-spacing: 3px;
-				text-transform: uppercase;
 				color: hsl(211, 19%, 68%);
 
 				@include mobile {
@@ -279,19 +296,6 @@ ul {
 					text-align: center;
 				}
 			}
-
-			.home-banner-text {
-				font-family: "Roboto", sans-serif;
-				font-weight: 400;
-				font-size: 17px;
-				line-height: 30px;
-				color: hsl(211, 19%, 68%);
-
-				@include mobile {
-					font-size: 15px;
-					text-align: center;
-				}
-			}
 		}
 
 		.explore-btn {
@@ -311,3 +315,200 @@ ul {
 		}
 	}
 }
+
+// =====================================================
+// ================ Destination Section ================
+// =====================================================
+
+.destination {
+	background: url(/public/assets/destination/background-destination-desktop.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 200px;
+	height: 100vh;
+	width: 100%;
+
+	@include tablet {
+		background: url(/public/assets/destination/background-destination-tablet.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding-bottom: 100px;
+		padding-top: 180px;
+		height: 100%;
+	}
+
+	@include mobile {
+		background: url(/public/assets/destination/background-destination-mobile.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding-top: 200px;
+		padding-top: 160px;
+	}
+
+	.container {
+		@include laptop {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		.destination-subtitle {
+			color: hsl(36, 100%, 100%);
+			span {
+				color: hsla(217, 5%, 33%, 0.644);
+				margin-right: 15px;
+				font-weight: 700;
+				letter-spacing: 0px;
+
+				@include tablet {
+					display: none;
+				}
+			}
+
+			@include tablet {
+				padding-left: 8%;
+			}
+
+			@include mobile {
+				padding-left: 0px;
+				text-align: center;
+			}
+		}
+
+		.planets {
+			display: flex;
+			align-items: start;
+			justify-content: space-between;
+			padding-top: 80px;
+			gap: 20px;
+
+			@include tablet {
+				flex-direction: column;
+				align-items: center;
+				gap: 60px;
+			}
+
+			@include mobile {
+				padding-top: 50px;
+			}
+
+			.planets-img {
+				padding-left: 20px;
+				padding-right: 20px;
+
+				@include tablet {
+					width: 600px;
+				}
+
+				@include mobile {
+					width: auto;
+				}
+			}
+
+			.planets-img img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+
+				@include mobile {
+					object-fit: cover;
+				}
+			}
+
+			.planet-details-container {
+				max-width: 500px;
+				.planet-btn-container {
+					display: flex;
+					align-items: center;
+					gap: 30px;
+
+					@include mobile {
+						justify-content: center;
+					}
+
+					.planet-btn {
+						padding-bottom: 10px;
+						color: hsla(211, 30%, 86%, 0.87);
+						border-bottom: 2px solid transparent;
+						background: transparent;
+						text-transform: uppercase;
+						cursor: pointer;
+						font-family: "Oswald", sans-serif;
+						font-weight: 400;
+						font-size: 14px;
+						letter-spacing: 3px;
+					}
+
+					.active-btn {
+						border-bottom-color: hsla(211, 30%, 86%, 0.87);
+					}
+				}
+
+				.planet-details {
+					@include mobile {
+						text-align: center;
+					}
+
+					.planet-name {
+						font-family: "Lustria", serif;
+						font-size: 80px;
+						font-weight: 400px;
+						letter-spacing: 4px;
+						color: hsl(36, 100%, 100%);
+						text-transform: uppercase;
+						padding: 30px 0px;
+
+						@include mobile {
+							font-size: 60px;
+						}
+					}
+
+					.planet-description {
+						padding-bottom: 45px;
+						border-bottom: 1px solid hsla(217, 5%, 33%, 0.644);
+						color: hsla(211, 30%, 86%, 0.87);
+					}
+
+					.planet-distance-and-travel-time-container {
+						display: flex;
+						align-items: center;
+						gap: 70px;
+						flex-wrap: wrap;
+						padding-top: 30px;
+
+						@include mobile {
+							justify-content: space-around;
+							row-gap: 20px;
+						}
+
+						.planet-distance-container,
+						.planet-travel-time-container {
+							p {
+								color: hsla(211, 30%, 86%, 0.87);
+								text-transform: uppercase;
+								font-family: "Oswald", sans-serif;
+								font-size: 13px;
+								font-weight: 400;
+								letter-spacing: 3px;
+							}
+
+							.planet-distance,
+							.planet-travel-time {
+								color: hsl(36, 100%, 100%);
+								letter-spacing: 1px;
+								font-family: "Lustria", serif;
+								font-size: 27px;
+								font-weight: 400px;
+								padding-top: 8px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// ==============================================
+// ================ Crew Section ================
+// ==============================================

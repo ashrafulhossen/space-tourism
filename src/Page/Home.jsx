@@ -7,11 +7,11 @@ const Home = () => {
 		<section className="home">
 			<div className="container">
 				<div className="home-banner">
-					<p className="home-banner-subtitle">
+					<p className="home-banner-subtitle subtitle">
 						So, you want to travel to
 					</p>
 					<h2 className="home-banner-title">space</h2>
-					<p className="home-banner-text">
+					<p className="home-banner-text text">
 						Let's face it; If you want to go to space, you might as
 						well genuinely go to outer space and not hove kind of on
 						the edge on it. Well sit back and relax because we will
