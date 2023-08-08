@@ -24,7 +24,7 @@ const Destination = () => {
 	return (
 		<div className="destination">
 			<div className="container">
-				<h3 className="destination-subtitle subtitle">
+				<h3 className="page-subtitle subtitle">
 					<span>01</span> Pick your destination
 				</h3>
 				<div className="planets">

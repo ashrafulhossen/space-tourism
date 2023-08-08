@@ -39,6 +39,12 @@ ul {
 	list-style: none;
 }
 
+.dark {
+	background: #000;
+	height: 100vh;
+	width: 100%;
+}
+
 .active {
 	display: block;
 }
@@ -67,6 +73,31 @@ ul {
 	font-size: 25px;
 	letter-spacing: 3px;
 	text-transform: uppercase;
+}
+
+.page-subtitle {
+	color: hsl(36, 100%, 100%);
+	span {
+		color: hsla(217, 5%, 33%, 0.644);
+		margin-right: 15px;
+		font-weight: 700;
+		letter-spacing: 0px;
+		font-family: "Oswald", sans-serif;
+		font-size: 27px;
+
+		@include tablet {
+			display: none;
+		}
+	}
+
+	@include tablet {
+		padding-left: 8%;
+	}
+
+	@include mobile {
+		padding-left: 0px;
+		text-align: center;
+	}
 }
 
 .text {
@@ -351,29 +382,6 @@ ul {
 			padding-right: 20px;
 		}
 
-		.destination-subtitle {
-			color: hsl(36, 100%, 100%);
-			span {
-				color: hsla(217, 5%, 33%, 0.644);
-				margin-right: 15px;
-				font-weight: 700;
-				letter-spacing: 0px;
-
-				@include tablet {
-					display: none;
-				}
-			}
-
-			@include tablet {
-				padding-left: 8%;
-			}
-
-			@include mobile {
-				padding-left: 0px;
-				text-align: center;
-			}
-		}
-
 		.planets {
 			display: flex;
 			align-items: start;
@@ -508,7 +516,203 @@ ul {
 	}
 }
 
-
 // ==============================================
 // ================ Crew Section ================
 // ==============================================
+
+.crew {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	background: url(/public/assets/crew/background-crew-desktop.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 200px;
+	min-height: 100vh;
+	height: 100%;
+	width: 100%;
+
+	@include tablet {
+		background: url(/public/assets/crew/background-crew-tablet.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding-bottom: 60px;
+		padding-top: 180px;
+		height: 100%;
+	}
+
+	@include mobile {
+		background: url(/public/assets/crew/background-crew-mobile.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding-top: 180px;
+		padding-bottom: 60px;
+	}
+
+	.container {
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+		flex-direction: column;
+		height: 100%;
+		gap: 20px;
+
+		@include laptop {
+			gap: 80px;
+		}
+
+		@include mobile {
+			padding-left: 20px;
+			padding-right: 20px;
+			gap: 50px;
+		}
+
+		.page-subtitle {
+			width: 100%;
+		}
+
+		.single-crew {
+			height: 100%;
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+			gap: 80px;
+
+			@include laptop {
+				gap: 0px;
+			}
+
+			@include tablet {
+				flex-direction: column-reverse;
+				align-items: center;
+				justify-content: center;
+				gap: 80px;
+			}
+
+			@include mobile {
+				text-align: center;
+			}
+
+			.crew-details-container {
+				max-width: 600px;
+				
+				@include laptop {
+					max-width: 50%;
+				}
+
+				@include tablet {
+					max-width: 100%;
+				}
+
+				.crew-details {
+					.crew-role {
+						font-family: "Lustria", serif;
+						font-size: 30px;
+						font-weight: 400;
+						color: hsla(223, 8%, 66%, 0.702);
+						text-transform: uppercase;
+
+						@include mobile {
+							font-size: 25px;
+						}
+					}
+
+					.crew-name {
+						width: 100%;
+						font-family: "Lustria", serif;
+						font-size: 50px;
+						font-weight: 400;
+						color: hsl(36, 100%, 100%);
+						text-transform: uppercase;
+						padding-top: 20px;
+						padding-bottom: 30px;
+
+						@include mobile {
+							font-size: 40px;
+						}
+					}
+				}
+
+				.crew-btn-container {
+					padding-top: 150px;
+					padding-bottom: 20px;
+					display: flex;
+					align-items: center;
+					justify-content: start;
+					gap: 20px;
+
+					@include laptop {
+						padding-top: 100px;
+					}
+
+					@include tablet {
+						padding-top: 50px;
+					}
+
+					@include mobile {
+						justify-content: center;
+					}
+
+					.crew-btn {
+						width: 15px;
+						height: 15px;
+						background: hsla(217, 5%, 33%, 0.644);
+						border-radius: 50%;
+					}
+
+					.active-crew-btn {
+						background: hsl(36, 100%, 100%);
+					}
+				}
+			}
+
+			.crew-img-container {
+				width: 500px;
+				height: 600px;
+				display: flex;
+				align-items: flex-end;
+				flex: 1;
+
+				@include mobile {
+					width: 300px;
+				}
+
+				img {
+					width: 100%;
+					max-height: 100%;
+					object-fit: contain;
+				}
+			}
+		}
+	}
+}
+
+// ====================================================
+// ================ Technology Section ================
+// ====================================================
+
+.technology {
+	background: url(/public/assets/technology/background-technology-desktop.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 200px;
+	height: 100vh;
+	width: 100%;
+
+	@include tablet {
+		background: url(/public/assets/technology/background-technology-tablet.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding-bottom: 100px;
+		padding-top: 180px;
+		height: 100%;
+	}
+
+	@include mobile {
+		background: url(/public/assets/technology/background-technology-mobile.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding-top: 200px;
+		padding-top: 160px;
+	}
+}
