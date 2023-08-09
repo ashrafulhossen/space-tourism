@@ -12,7 +12,7 @@ const Destination = () => {
 			setDestinationPlanets(data.destinations);
 			setSelectedPlanet(data.destinations[0]);
 		};
-		return () => loadData();
+		loadData();
 	}, []);
 
 	const selectPlanetEvent = (e) => {

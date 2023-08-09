@@ -12,7 +12,7 @@ const Technology = () => {
 			setTechnology(data.technology);
 			setSelectedTechnology(data.technology[0]);
 		};
-		return () => loadData();
+		loadData();
 	}, []);
 
 	const selectTechnologyEvent = (e) => {

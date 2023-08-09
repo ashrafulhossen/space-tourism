@@ -12,7 +12,7 @@ const Crew = () => {
 			setCrew(data.crew);
 			setSelectedCrew(data.crew[0]);
 		};
-		return () => loadData();
+		loadData();
 	}, []);
 
 	const selectCrewEvent = (e) => {
