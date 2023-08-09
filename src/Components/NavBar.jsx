@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import menuCloseImg from "/assets/shared/icon-close.svg";
 import menuOpenImg from "/assets/shared/icon-hamburger.svg";
 import logo from "/assets/shared/logo.svg";
@@ -64,7 +64,9 @@ const NavBar = () => {
 	return (
 		<div className="navbar">
 			<div className="logo-container">
-				<img className="logo" src={logo} alt="logo image" />
+				<Link to={"/"}>
+					<img className="logo" src={logo} alt="logo image" />
+				</Link>
 			</div>
 			<ul className="menubar">{menuItems}</ul>
 			<div className="mobile-menubar-container">

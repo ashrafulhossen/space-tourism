@@ -595,7 +595,7 @@ ul {
 
 			.crew-details-container {
 				max-width: 600px;
-				
+
 				@include laptop {
 					max-width: 50%;
 				}
@@ -696,7 +696,9 @@ ul {
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding-top: 200px;
-	height: 100vh;
+	padding-bottom: 150px;
+	min-height: 100vh;
+	height: 100%;
 	width: 100%;
 
 	@include tablet {
@@ -714,5 +716,128 @@ ul {
 		background-size: cover;
 		padding-top: 200px;
 		padding-top: 160px;
+	}
+
+	.container {
+
+		@include mobile {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		.technology-container {
+			padding-top: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 50px;
+
+			@include laptop {
+				gap: 20px;
+			}
+
+			@include tablet {
+				flex-direction: column-reverse;
+				gap: 80px;
+				padding-top: 80px;
+			}
+			
+			.technology-details-container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 80px;
+				max-width: 610px;
+
+				@include laptop {
+					gap: 50px;
+				}
+
+				@include mobile {
+					flex-direction: column-reverse;
+					text-align: center;
+				}
+
+				.technology-btn-container {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					flex-direction: column;
+					gap: 30px;
+
+					@include mobile {
+						flex-direction: row;
+					}
+
+					.technology-btn {
+						height: 70px;
+						width: 70px;
+						border-radius: 50%;
+						font-family: "Lustria", serif;
+						font-weight: 400;
+						font-size: 32px;
+						background: transparent;
+						color: hsl(36, 100%, 100%);
+						border: 1px solid hsla(0, 0%, 52%, 0.349);
+						cursor: pointer;
+
+						@include mobile {
+							height: 50px;
+							width: 50px;
+							font-size: 25px;
+						}
+					}
+
+					.active-technology-btn {
+						background: hsl(36, 100%, 100%);
+						border-color: hsl(36, 100%, 100%);
+						color: hsl(0, 0%, 0%);
+					}
+				}
+
+				.technology-details {
+					.technology-text {
+						font-family: "Oswald", sans-serif;
+						font-size: 14px;
+						font-weight: 400;
+						color: hsla(211, 30%, 86%, 0.87);
+						text-transform: uppercase;
+						letter-spacing: 3px;
+					}
+
+					.technology-name {
+						font-family: "Lustria", serif;
+						font-size: 50px;
+						font-weight: 400;
+						color: hsl(36, 100%, 100%);
+						text-transform: uppercase;
+						letter-spacing: 1px;
+						padding-top: 10px;
+						padding-bottom: 17px;
+					}
+				}
+			}
+
+			.technology-img-container {
+				margin-right: -20px;
+				width: 450px;
+
+				@include laptop {
+					width: 400px;
+				}
+
+				@include mobile {
+					width: 100%;
+					height: 100%;
+					margin-right: 0px;
+				}
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+				}
+			}
+		}
 	}
 }
